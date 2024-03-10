@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>Week days</title>
+</head>
+<body>
+    <div class="container mt-3">
+      <h2 style="text-align: center; margin-bottom: 3% ">Week Days</h2>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th><a href="uz/">UZBEKISTAN</a></th>
+              <th><a href="ru/">RUSSIAN</a></th>
+            <th><a href="{% url 'week_days_all' %}en/">ENGLISH</a></th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for day in weekdays %}
+          <tr>
+            <td style="color: #ff0000">{{ day.uz }}</td>
+            <td style="color: #000ff5">{{ day.ru }}</td>
+            <td style="color: #0de101">{{ day.en }}</td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

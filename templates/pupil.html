@@ -1,0 +1,27 @@
+{% extends 'home_pupils.html' %}
+
+{% block title %}
+    {% for pupil in pupils %}
+        {{ pupil.name }} {{ pupil.last_name }}
+    {% endfor %}
+{% endblock %}
+
+{% block content %}
+    {% for pupil in pupils %}
+	<tbody>
+          <tr>
+            <td>{{ pupil.id }}</td>
+            <td> {{ pupil.name }}&nbsp;&nbsp;{{ pupil.last_name }}</td>
+            <td>{{ pupil.m1_1 }}</td>
+            <td>{{ pupil.m1_2 }}</td>
+            <td>{{ pupil.m1_3 }}</td>
+            <td>{{ pupil.m2_1 }}</td>
+            <td>{{ pupil.m2_2 }}</td>
+            <td>{{ pupil.m2_3 }}</td>
+            <td>{{ pupil.m3_1 }}</td>
+            <td>{{ pupil.m3_2 }}</td>
+            <td>{{ pupil.all }}</td>
+          </tr>
+    </tbody>
+    {% endfor %}
+{% endblock %}
